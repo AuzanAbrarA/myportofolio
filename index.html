@@ -88,14 +88,14 @@
     <div style="margin-bottom: 20px;">
         <h3>Video</h3>
         <video width="100%" controls>
-            <source src="https://example.com/path_to_your_video.mp4" type="video/mp4">
+            <source src="https://https://youtu.be/3X-S0HMrxAs?si=UXuKIbe-fqsJKygb.mp4" type="video/mp4">
             Browser Anda tidak mendukung pemutar video.
         </video>
     </div>
     <div>
         <h3>Lagu</h3>
         <audio controls>
-            <source src="https://example.com/path_to_your_audio.mp3" type="audio/mpeg">
+            <source src="https://https://soundcloud.com/ruanganimajinasi/fiersabesari?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing.mp3" type="audio/mpeg">
             Browser Anda tidak mendukung pemutar audio.
         </audio>
     </div>
@@ -109,19 +109,20 @@
 
 <script>
     function fetchImages() {
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=4') // Mengambil 4 gambar
-            .then(response => response.json())
-            .then(data => {
-                const output = document.getElementById('gallery-output');
-                output.innerHTML = ''; // Clear previous output
-                data.forEach(photo => {
-                    const img = document.createElement('img');
-                    img.src = photo.url;
-                    img.alt = photo.title;
-                    output.appendChild(img);
-                });
-            })
-            .catch(error => console.error('Error fetching images:', error));
+        const images = [
+            'URL_GAMBAR_1', // https://www.pexels.com/id-id/video/31565670/
+            'URL_GAMBAR_2', // https://www.pexels.com/id-id/foto/dedaunan-daun-daun-hijau-flora-15676265/
+            'URL_GAMBAR_3', // https://www.pexels.com/id-id/foto/lanskap-permukiman-gua-bersejarah-di-cappadocia-31819744/
+            'URL_GAMBAR_4'  // https://www.pexels.com/id-id/foto/cahaya-alpenglow-yang-megah-di-puncak-gunung-snowy-31568335/
+        ];
+        const output = document.getElementById('gallery-output');
+        output.innerHTML = ''; // Clear previous output
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Galeri Foto';
+            output.appendChild(img);
+        });
     }
 </script>
 
