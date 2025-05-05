@@ -1,0 +1,5 @@
+title: "Portofolio Saya"
+description: "Ini adalah portofolio online saya."
+baseurl: "/myportofolio"
+url: "https://auzanabrara.github.io"
+theme: "jekyll-theme-slate"
