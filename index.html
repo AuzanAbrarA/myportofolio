@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Portofolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background: #575757;
+        }
+        section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Curriculum Vitae - Portofolio</h1>
+</header>
+
+<nav>
+    <a href="#tentang-saya">Tentang Saya</a>
+    <a href="#hobi">Hobi</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#media">Media</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#buku-tamu">Buku Tamu</a>
+</nav>
+
+<section id="tentang-saya">
+    <h2>Tentang Saya</h2>
+    <p>Saya seorang mahasiswa aktif di UISI, memiliki kemampuan leadership yang baik, mudah bergaul, cepat beradaptasi, dan suka belajar hal baru.</p>
+</section>
+
+<section id="hobi">
+    <h2>Hobi</h2>
+    <ul>
+        <li>Kuliner</li>
+        <li>Olahraga</li>
+        <li>Berkelana</li>
+    </ul>
+</section>
+
+<section id="kontak">
+    <h2>Kontak</h2>
+    <p>Email: auzan.alrafi23@student.uisi.ac.id</p>
+    <p>Telepon: 0882-3419-8573</p>
+    <p>Alamat: Jl. Pahlawan GG. Perabuhan Tuban, Jawa Timur</p>
+</section>
+
+<section id="media">
+    <h2>Media</h2>
+    <div style="margin-bottom: 20px;">
+        <h3>Video</h3>
+        <video width="100%" controls>
+            <source src="https://example.com/path_to_your_video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutar video.
+        </video>
+    </div>
+    <div>
+        <h3>Lagu</h3>
+        <audio controls>
+            <source src="https://example.com/path_to_your_audio.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung pemutar audio.
+        </audio>
+    </div>
+</section>
+
+<section id="galeri">
+    <h2>Galeri Foto</h2>
+    <button onclick="fetchImages()">Tampilkan Foto</button>
+    <div class="gallery" id="gallery-output"></div>
+</section>
+
+<script>
+    function fetchImages() {
+        fetch('https://jsonplaceholder.typicode.com/photos?_limit=4') // Mengambil 4 gambar
+            .then(response => response.json())
+            .then(data => {
+                const output = document.getElementById('gallery-output');
+                output.innerHTML = ''; // Clear previous output
+                data.forEach(photo => {
+                    const img = document.createElement('img');
+                    img.src = photo.url;
+                    img.alt = photo.title;
+                    output.appendChild(img);
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+    }
+</script>
+
+<section id="buku-tamu">
+    <h2>Buku Tamu</h2>
+    <form>
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama"><br>
+        <label for="pesan">Pesan:</label><br>
+        <textarea id="pesan" name="pesan"></textarea><br>
+        <button type="submit">Tambah</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Portofolio Auzan</p>
+</footer>
+
+</body>
+</html>
